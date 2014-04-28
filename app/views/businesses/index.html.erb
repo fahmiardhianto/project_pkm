@@ -1,14 +1,24 @@
 <h1>UKM</h1>
 
-<% @businesses.each do |business| %>
-  <div class="item-business">
-    <p><h3>Nama</h3></p>
-    <p><%= link_to business.name, business %></p>
-    <p><h3>Deskripsi</h3></p>
-    <p><%= truncate(business.description, length: 400, separator: ' ') %></p>
 
-  </div>
-<% end %>
+<div class="col-md-2">
+  <h2>Kategori</h2>
+  <ul>
+    <% @categories.each do |cat| %>
+    <li><%= cat.name %></li>
+    <% end %>
+  </ul>
+</div>
+<div class="col-md-10">
+  <% @businesses.each do |business| %>
+    <div class="item-business">
+      <p><h2><%= link_to business.name, business %></h2></p>
+      <p><%= truncate(business.description, length: 400, separator: ' ') %></p>
+
+    </div>
+  <% end %>
+
+</div>
 
 <!-- <table>
   <thead>
