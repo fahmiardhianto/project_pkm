@@ -26,3 +26,9 @@ Business.create!(
   category_id: 1,
   established: '2014-04-25',
   contact: '0274 456788')
+
+Category.create!(
+  name: 'Kuliner')
+
+Category.create!(
+  name: 'Kerajinan')
