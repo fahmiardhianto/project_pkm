@@ -1,5 +1,5 @@
 ProjectPkm::Application.routes.draw do
-  resources :businesses
+  resources :businesses, path: 'ukm'
   resources :categories
   root 'businesses#index'
   # The priority is based upon order of creation: first created -> highest priority.
