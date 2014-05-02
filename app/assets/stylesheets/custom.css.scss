@@ -7,21 +7,34 @@ body {
 }
 
 .navbar {
-  background-color: #2c3e50;
+  background-color: #B23437;
 }
 
 .navbar-nav {
+	margin-right:10px;
   > li {
     color: #fff;
     font-weight: bold;
     > a {
       color: #fff;
-      &:hover {
+	  }
+    > a:hover {
         color: #ccc;
       }
     }
   }
+  
+.nav-daftar {
+	color:#000;
+	margin-left:10px;
+	}
+
+.left {
+	margin-bottom:10px;
+	float:left;
+	margin-right:5px;	
 }
+
 
 .wrapper {
   min-height: 100%;
@@ -49,3 +62,21 @@ footer {
   position: absolute;
   width: 100%;
 }
+
+.item-business {
+	height:200px;
+	padding:20px;
+	padding-left:5px;
+	padding-top:5px;
+	margin-bottom:10px;
+	border-style:solid;
+	border-width:3px;
+	border-color: #EDEDEE;
+	
+	a {
+		color:#000;
+		}
+	a:hover {
+		color:#B23437;
+		}
+	}
