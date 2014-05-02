@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502004322) do
+ActiveRecord::Schema.define(version: 20140502125848) do
 
   create_table "businesses", force: true do |t|
     t.integer  "category_id"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140502004322) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"
+    t.string   "location"
+    t.string   "string"
   end
 
   add_index "businesses", ["category_id"], name: "index_businesses_on_category_id"

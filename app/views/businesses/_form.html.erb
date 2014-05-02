@@ -12,23 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label 'Nama' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label 'Deskripsi' %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :established %><br>
+    <%= f.label 'Tanggal didirikan' %><br>
     <%= f.date_select :established %>
   </div>
   <div class="field">
-    <%= f.label :contact %><br>
+    <%= f.label 'Lokasi' %><br>
+    <%= f.text_area :location %>
+  </div>
+  <div class="field">
+    <%= f.label 'Kontak' %><br>
     <%= f.text_area :contact %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br>
+    <%= f.label 'Kategori' %><br>
     <%= f.collection_select(:category_id, Category.all, :id, :name) %>
   </div>
   <div class="actions">
