@@ -16,6 +16,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label 'Kategori' %><br>
+    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+  </div>
+  <div class="field">
     <%= f.label 'Deskripsi' %><br>
     <%= f.text_area :description %>
   </div>
@@ -31,11 +35,7 @@
     <%= f.label 'Kontak' %><br>
     <%= f.text_area :contact %>
   </div>
-  <div class="field">
-    <%= f.label 'Kategori' %><br>
-    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Buat profil'%>
   </div>
 <% end %>
