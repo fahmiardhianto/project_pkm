@@ -1,4 +1,6 @@
 ProjectPkm::Application.routes.draw do
+  resources :users
+
   resources :businesses, path: 'ukm'
   resources :categories
   root 'businesses#index'
