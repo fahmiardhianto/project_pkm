@@ -1,9 +1,13 @@
 ProjectPkm::Application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
+  get 'users/new', path: 'daftar', as: 'signup'
+  get 'sessions/new', path: 'login', to: 'sessions#new', as: 'login'
+  get 'sessions/destroy', to: 'sessions#destroy', as: 'logout'
   resources :users
-
   resources :businesses, path: 'ukm'
-  resources :categories
+  resources :categories, path: 'kategori'
   root 'businesses#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

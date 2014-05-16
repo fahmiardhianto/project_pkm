@@ -1,0 +1,17 @@
+<h1>Log In</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "Password" %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Log In", class: "btn btn-lg btn-primary" %>
+    <% end %>
+
+    <p>Tidak punya akun?<%= link_to " Daftar sekarang!", signup_path %></p>
+  </div>
+</div>
