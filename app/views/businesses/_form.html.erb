@@ -1,4 +1,4 @@
-<%= form_for(@business) do |f| %>
+<%= form_for @business, html: { class: 'form-horizontal' } do |f| %>
   <% if @business.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
@@ -11,31 +11,46 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label 'Nama' %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label 'Nama', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label 'Kategori' %><br>
-    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+  <div class="form-group">
+    <%= f.label 'Kategori', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label 'Deskripsi' %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label 'Deskripsi', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label 'Tanggal didirikan' %><br>
-    <%= f.date_select :established %>
+  <div class="form-group">
+    <%= f.label 'Tanggal didirikan', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.date_select :established, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label 'Lokasi' %><br>
-    <%= f.text_area :location %>
+  <div class="form-group">
+    <%= f.label 'Lokasi', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_area :location, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label 'Kontak' %><br>
-    <%= f.text_area :contact %>
+  <div class="form-group">
+    <%= f.label 'Kontak', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_area :contact, class: 'form-control' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit 'Buat profil'%>
+  <%= f.hidden_field(:user_id, value: current_user.id) %>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-2">
+      <%= f.button('Buat profil', class: 'btn btn-default btn-primary') %>
+    </div>
   </div>
 <% end %>

@@ -1,6 +1,3 @@
-<h1>UKM</h1>
-
-
 <div class="col-md-2">
   <h2>Kategori</h2>
   <ul>
@@ -10,17 +7,12 @@
   </ul>
 </div>
 <div class="col-md-10">
+  <h1>UKM</h1>
   <% @businesses.each do |business| %>
     <div class="item-business">
       <div class="img-thumbnail"><%= image_tag(business.image_url) %></div>
       <p><h2><%= link_to business.name, business %></h2></p>
-      <p><%= truncate(business.description, length: 400, separator: ' ') %></p>
-
+      <p><%= truncate(business.description, length: 500, separator: ' ') { link_to ' baca selengkapnya', business} %></p>
     </div>
   <% end %>
-
 </div>
-
-<br>
-<div class="clear"></div>
-<%= link_to 'Buat profil UKM', new_business_path %>

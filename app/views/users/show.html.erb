@@ -13,5 +13,16 @@
   <%= @user.birthday %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% if logged_in? %>
+  <p>Usaha anda</p>
+  <% @businesses.each do |business| %>
+    <p>
+      <%= link_to business.name, business %>
+    </p>
+  <% end %>
+
+  <br><br>
+  <p>
+    <%= link_to 'Buat usaha', new_business_path %>
+  </p>
+<% end %>

@@ -10,6 +10,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if logged_in?
+      @businesses = Business.all.where(user_id: current_user.id)
+    end
   end
 
   # GET /users/new

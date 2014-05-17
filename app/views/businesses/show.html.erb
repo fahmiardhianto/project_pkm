@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="img-profil">
   <%= image_tag @business.image_url %>
 </div>
@@ -28,4 +26,4 @@
   <%= @business.contact %>
 </p>
 
-<%= link_to 'Kembali ke halaman sebelumnya', businesses_path %>
+<%= link_to @business.user.name, @business.user %>
