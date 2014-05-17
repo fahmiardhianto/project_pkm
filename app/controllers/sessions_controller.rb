@@ -3,11 +3,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:password].downcase)
+    user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-
+      flash[:success] = "Selamat datang, #{user.name}"
+      redirect_to user
     else
-      flash[:error] = 'email/password salah! silahkan dicek kembali'
+      flash[:warning] = 'email/password salah! silahkan dicek kembali'
       render 'new'
     end
   end
