@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        login @user
         format.html { redirect_to @user }
         format.json { render action: 'show', status: :created, location: @user }
         flash[:success] = 'User was successfully created.';

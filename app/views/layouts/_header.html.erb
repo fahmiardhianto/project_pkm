@@ -16,8 +16,13 @@
         <li><%= link_to 'Beranda', root_path %></li>
         <li><%= link_to 'Tentang Kami', '#' %></li>
         <li><%= link_to 'Kontak', '#' %></li>
+      <% if logged_in? %>
+        <li><%= link_to current_user.name, current_user %></li>
+        <li><%= link_to 'Keluar', logout_path, method: 'delete' %></li>
+      <% else %>
         <li><%= link_to 'Daftar', signup_path %></li>
         <li><%= link_to 'Masuk', login_path %></li>
+      <% end %>
       </ul>
 
   </div>
