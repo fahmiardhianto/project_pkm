@@ -2,28 +2,17 @@
   <%= image_tag @business.image_url %>
 </div>
 
-<p>
-  <strong>Nama:</strong>
-  <%= @business.name %>
-</p>
+<div class="profil-title">
+  <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
+</div>
 
-<p>
-  <strong>Kategori:</strong>
-  <%= @business.category.name %>
-</p>
-<p>
-  <strong>Deskripsi:</strong>
-  <%= @business.description %>
-</p>
+<div class="profil-desc col-sm-8">
+  <p><%= @business.description %></p>
+  <p>Ukm dibuat oleh <%= link_to @business.user.name, @business.user %>, pada tanggal <%= @business.updated_at.localtime.to_formatted_s(:long) %></p>
+</div>
 
-<p>
-  <strong>Terbentuk sejak:</strong>
-  <%= @business.established %>
-</p>
-
+<img src="http://maps.googleapis.com/maps/api/staticmap?center=-7.797224,110.368797&zoom=13&size=300x300&sensor=false">
 <p>
   <strong>Kontak:</strong>
   <%= @business.contact %>
 </p>
-
-<%= link_to @business.user.name, @business.user %>

@@ -1,0 +1,5 @@
+id:
+  helpers:
+    submit:
+      create: 'Buat %{model}'
+      update: 'Perbarui %{model}'
