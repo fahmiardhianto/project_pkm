@@ -2,8 +2,9 @@
   <h2>Kategori</h2>
   <ul>
     <% @categories.each do |cat| %>
-    <li><%= cat.name %></li>
+    <li><a href="/ukm?category=<%= cat.id %>" data-id='<%= cat.id %>'><%= cat.name %></a></li>
     <% end %>
+    <li><a href="/">Semua</a></li>
   </ul>
 </div>
 <div class="col-md-10">

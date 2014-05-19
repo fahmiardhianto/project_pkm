@@ -1,11 +1,15 @@
 class BusinessesController < ApplicationController
   before_action :set_business, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize, only: [:show, :index]
+  skip_before_action :authorize, only: [:index, :show]
 
   # GET /businesses
   # GET /businesses.json
   def index
-    @businesses = Business.all.order(updated_at: :desc)
+    if params[:category]
+      @businesses = Business.all.order(updated_at: :desc).where(category_id: params[:category])
+    else
+      @businesses = Business.all.order(updated_at: :desc)
+    end
     @categories = Category.all.order(name: :asc)
   end
 

@@ -16,3 +16,7 @@
   <p>Nomor telp/HP : <%= @business.phone %></p>
   <p>Email : <%= @business.email %></p>
 </div>
+
+<% if @business.user == current_user %>
+  <%= link_to 'Edit', edit_business_path(@business) %>
+<% end %>
