@@ -60,5 +60,5 @@ production:
   encoding: unicode
   database: project_pkm_production
   pool: 5
-  # username: postgres
+  username: postgres
   password:

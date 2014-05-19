@@ -5,10 +5,10 @@ gem 'rails'
 gem 'tzinfo-data'
 # gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'bcrypt'
+gem 'faker'
 
 group :development do
   gem 'sqlite3'
-  gem 'faker'
 end
 
 group :production do
