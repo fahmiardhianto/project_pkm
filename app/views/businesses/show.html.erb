@@ -6,13 +6,13 @@
   <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
 </div>
 
-<div class="profil-desc col-sm-8">
+<div class="profil-desc">
   <p><%= @business.description %></p>
-  <p>Ukm dibuat oleh <%= link_to @business.user.name, @business.user %>, pada tanggal <%= @business.updated_at.localtime.to_formatted_s(:long) %></p>
+  <p>Ukm dibuat oleh <%= link_to @business.user.name, @business.user %>, pada tanggal <%= @business.established %></p>
 </div>
 
-<img src="http://maps.googleapis.com/maps/api/staticmap?center=-7.797224,110.368797&zoom=13&size=300x300&sensor=false">
-<p>
-  <strong>Kontak:</strong>
-  <%= @business.contact %>
-</p>
+<div class="profil-contact">
+  <p>Lokasi usaha : <%= @business.location %></p>
+  <p>Nomor telp/HP : <%= @business.phone %></p>
+  <p>Email : <%= @business.email %></p>
+</div>

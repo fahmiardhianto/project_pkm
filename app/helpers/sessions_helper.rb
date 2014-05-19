@@ -19,6 +19,13 @@ module SessionsHelper
     @current_user ||= User.find_by(remember_token: remember_token)
   end
 
+  def authorize
+    unless logged_in?
+      redirect_to login_path
+      flash[:warning] = 'Anda harus login terlebih dahulu!'
+    end
+  end
+
   def logout
     current_user.update_attribute(:remember_token, User.digest(User.new_remember_token))
     cookies.delete(:remember_token)

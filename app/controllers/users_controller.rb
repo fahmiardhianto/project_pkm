@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorize, only: [:index, :show]
 
   # GET /users
   # GET /users.json
@@ -10,9 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if logged_in?
-      @businesses = Business.all.where(user_id: current_user.id)
-    end
+      @businesses = Business.all.where(user_id: @user.id)
   end
 
   # GET /users/new
