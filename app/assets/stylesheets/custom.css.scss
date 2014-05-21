@@ -39,6 +39,7 @@ body {
 .img-thumbnail {
   float: left;
   height: 150px;
+  margin-top: 10px;
   margin-right: 20px;
   overflow: hidden;
   width: 150px;
@@ -98,19 +99,82 @@ footer {
 }
 
 .item-business {
-	height:200px;
-	padding:20px;
+	height:180px;
 	padding-left:5px;
-	padding-top:5px;
-	margin-bottom:10px;
-	border-style:solid;
-	border-width:3px;
-	border-color: #EDEDEE;
+	background-color: #EDEDEE;
+  border-style:solid;
+  border-width:1px;
+  border-color:#ADADAD;
+
+  h2 {
+  padding-top:0px;
+  margin-top:0px;
+  }
 
 	a {
-		color:#000;
-		}
-	a:hover {
+
 		color:#B23437;
 		}
+	a:hover {
+    zoom:110%;
+		}
 	}
+
+.col-md-2 {
+  padding:0px;
+  margin-top:20px;
+  background-color:#EDEDEE;
+  border-style:solid;
+  border-width:1px;
+  border-color: #ADADAD;
+  
+  >h2{
+    color:#FFF;
+    background-color:#454545;
+    margin-top:0px;
+    padding-left:4px;
+    padding-bottom:2px;
+  }
+
+  >ul{
+  padding-left:25px;
+  }
+  }
+  
+.col-md-10 {
+  >h1{
+  color:#FFFFFF;
+  padding-left:10px;
+  background-color:#B23437;
+  border-style:solid;
+  border-width:1px;
+  border-color:#ADADAD;
+  }
+}
+
+
+.daftar{
+  background-color:#454545;
+  margin-bottom:5px;
+  
+  }
+
+.masuk{
+  background-color:#00BFFF;
+  margin-bottom:5px;
+  margin-left:5px;
+  }
+
+
+.meterbar{
+
+padding-top:10px;
+padding-left:50px;
+  position:center;
+  background-color:#ADADAD;
+  border-style:solid;
+  border-width:1px;
+  border-color:#ADADAD;
+  margin-bottom:10px;
+  height:40px;
+  }

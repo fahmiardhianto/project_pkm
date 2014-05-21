@@ -7,13 +7,16 @@
     <li><a href="/">Semua</a></li>
   </ul>
 </div>
+
+
 <div class="col-md-10">
-  <h1>UKM</h1>
+  <h1> UKM</h1>
   <% @businesses.each do |business| %>
     <div class="item-business">
       <div class="img-thumbnail"><%= image_tag(business.image_url) %></div>
       <p><h2><%= link_to business.name, business %></h2></p>
       <p><%= truncate(business.description, length: 500, separator: ' ') { link_to ' baca selengkapnya', business} %></p>
     </div>
+    <div class="meterbar"><%= image_tag('meterbar.png')%>  60%</div>
   <% end %>
 </div>
