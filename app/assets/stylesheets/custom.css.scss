@@ -106,13 +106,18 @@ footer {
   border-width:1px;
   border-color:#ADADAD;
 
+  p{
+    margin-top: 0px;
+  }
+
   h2 {
+  margin-bottom:2px;
   padding-top:0px;
+  padding-bottom: 0px;
   margin-top:0px;
   }
 
 	a {
-
 		color:#B23437;
 		}
 	a:hover {
@@ -154,27 +159,133 @@ footer {
 
 
 .daftar{
-  background-color:#454545;
+  background-color:#7BD433;
   margin-bottom:5px;
-  
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+
   }
+
+.daftar:hover{
+  background-color:#61A629;
+  }
+
 
 .masuk{
   background-color:#00BFFF;
   margin-bottom:5px;
   margin-left:5px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
   }
+
+.masuk:hover{
+ background-color:#009DD1;
+}
 
 
 .meterbar{
-
-padding-top:10px;
-padding-left:50px;
+padding-top:7px;
+padding-left:10px;
+padding-right:10px;
   position:center;
   background-color:#ADADAD;
   border-style:solid;
   border-width:1px;
   border-color:#ADADAD;
-  margin-bottom:10px;
   height:40px;
   }
+
+.kotakan{
+  background-color:#ADADAD;
+  border-style:solid;
+  border-width:1px;
+  border-color:#ADADAD;
+  margin-bottom:10px;
+  height:41px;
+  padding-bottom: 10px;
+  }
+
+.persen,.hari,.terkumpul{
+  float:left;
+  height:40px;
+  width:300px;
+  border-style:solid;
+  border-width:0px;
+  border-color:#000;
+  text-align: center;
+
+  p{
+    margin-bottom: 0px;
+  }
+    h5{
+      margin-bottom: 0px;
+      margin-top: 0px;  
+    }
+
+}
+
+
+.hr-divider{
+    border-top: 2px solid #454545;
+    width: 730px;
+    height: 1px;
+    position: absolute;
+    margin-left: 170px;
+}
+
+.vr-divider{
+  border-left: 1px solid #454545;
+    width: 1px;
+    height: 36px;
+    position: absolute;
+    margin-left:306px;
+}
+
+.vr-divider2{
+  border-left: 1px solid #454545;
+    width: 1px;
+    height: 36px;
+    position: absolute;
+    margin-left:612px;
+}
+
+.styled{
+  padding:10px;
+  padding-left:30px;
+  background-color:#ADADAD;
+  border-style:solid;
+  border-width:1px;
+  border-color:#ADADAD;
+  height:41px;
+}
+
+.styled progress {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  width: 98%;
+  height: 20px;
+
+  /* Firefox */
+  border: none;
+  background: #EEE;
+  border-radius: 1px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+}
+
+.styled progress::-webkit-progress-bar {
+  background: #EEE;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  border-radius: 1px;
+}
+
+.styled progress::-webkit-progress-value {
+  background-color: #B23437;
+  border-radius: 1px;
+}
+
+.styled progress::-moz-progress-bar {
+  background-color: #B23437;
+  border-radius: 1px;
+}
