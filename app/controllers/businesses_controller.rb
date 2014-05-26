@@ -34,7 +34,8 @@ class BusinessesController < ApplicationController
 
     respond_to do |format|
       if @business.save
-        format.html { redirect_to @business, notice: 'Business was successfully created.' }
+        flash[:success] = 'Profil UKM berhasil dibuat.'
+        format.html { redirect_to @business }
         format.json { render action: 'show', status: :created, location: @business }
       else
         format.html { render action: 'new' }
@@ -48,7 +49,8 @@ class BusinessesController < ApplicationController
   def update
     respond_to do |format|
       if @business.update(business_params)
-        format.html { redirect_to @business, notice: 'Business was successfully updated.' }
+        flash[:success] = 'Profil UKM berhasil diperbarui.'
+        format.html { redirect_to @business }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -75,6 +77,6 @@ class BusinessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
-      params.require(:business).permit(:name, :description, :established, :contact, :category_id, :user_id)
+      params.require(:business).permit(:name, :description, :established, :location, :category_id, :user_id)
     end
 end
