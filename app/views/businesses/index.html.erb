@@ -17,23 +17,23 @@
       <p><h2><%= link_to business.name, business %></h2><div class="hr-divider"></div></p>
       <p><%= truncate(business.description, length: 500, separator: ' ') { link_to ' baca selengkapnya', business} %></p>
     </div>
-<div class="styled">
-  <progress value="50" max="100"></progress>
-</div>
-<div class="kotakan">
-  <div class="persen">
-    <p><strong>50%</strong></p>
-    <p><h5>Progress</h5></p>
-  </div>  <div class="vr-divider"></div>
-  <div class="terkumpul">
-    <p><strong>500.000</strong></p>
-    <p><h5>Terkumpul</h5></p>
-  </div> 
-  <div class="vr-divider2"></div>
-  <div class="hari">
-    <p><strong>20</strong></p>
-    <p><h5>Hari Tersisa</h5></p>
-  </div>  
-  </div>
+    <div class="styled">
+      <progress value="<%= business.received %>" max="<%= business.target %>"></progress>
+    </div>
+    <div class="kotakan">
+      <div class="persen">
+        <p><strong><%= business.received/business.target*100 %>%</strong></p>
+        <p><h5>Progress</h5></p>
+      </div>  <div class="vr-divider"></div>
+      <div class="terkumpul">
+        <p><strong><%= business.received %></strong></p>
+        <p><h5>Terkumpul</h5></p>
+      </div>
+      <div class="vr-divider2"></div>
+      <div class="hari">
+        <p><strong>20</strong></p>
+        <p><h5>Hari Tersisa</h5></p>
+      </div>
+    </div>
   <% end %>
 </div>

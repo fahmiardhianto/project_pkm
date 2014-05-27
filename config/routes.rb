@@ -1,4 +1,8 @@
 ProjectPkm::Application.routes.draw do
+  get 'static_pages/about', path: 'tentang-kami', as: 'about'
+
+  get 'static_pages/contact', path: 'kontak', as: 'contact'
+
   resources :sessions, only: [:new, :create, :destroy]
   get 'users/new', path: 'daftar', as: 'signup'
   get 'sessions/new', path: 'login', to: 'sessions#new', as: 'login'

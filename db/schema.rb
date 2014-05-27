@@ -22,12 +22,11 @@ ActiveRecord::Schema.define(version: 20140526234521) do
     t.datetime "updated_at"
     t.string   "image_url"
     t.string   "location"
-    t.string   "string"
     t.integer  "user_id"
     t.string   "phone"
     t.string   "email"
-    t.integer  "received",    default: 0
-    t.integer  "target",      default: 0
+    t.integer  "received",    default: 1
+    t.integer  "target",      default: 1
   end
 
   add_index "businesses", ["category_id"], name: "index_businesses_on_category_id"

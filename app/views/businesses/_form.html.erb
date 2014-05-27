@@ -41,6 +41,30 @@
       <%= f.text_area :location, class: 'form-control' %>
     </div>
   </div>
+  <div class="form-group">
+    <%= f.label 'Email', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Nomor Telefon', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :phone, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Jumlah dana yang sudah dikumpulkan', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :received, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Target dana', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :target, class: 'form-control' %>
+    </div>
+  </div>
   <%= f.hidden_field(:user_id, value: current_user.id) %>
   <div class="actions form-group">
     <div class="col-sm-offset-2 col-sm-2">
