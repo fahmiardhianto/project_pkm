@@ -15,7 +15,7 @@
   <% @businesses.each do |business| %>
   <div class="kotakan-ukm">
     <div class="item-business">
-      <div class="img-thumbnail"><%= image_tag(business.image_url) %></div>
+      <div class="img-thumbnail"><%= image_tag(business.photo.url) %></div>
       <p><h2><%= link_to business.name, business %></h2><div class="hr-divider"></div></p>
       <p><%= truncate(business.description, length: 500, separator: ' ') { link_to ' baca selengkapnya', business} %></p>
     </div>

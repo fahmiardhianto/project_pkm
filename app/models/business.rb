@@ -5,4 +5,8 @@ class Business < ActiveRecord::Base
   validates :name, presence: true
   validates :category_id, presence: true
   validates :user_id, presence: true
+
+  has_attached_file :photo, url: "/assets/ukm/:id/:basename.:extension", path: ":rails_root/public/assets/ukm/:id/:basename.:extension", default_url: "/assets/ukm/missing.png"
+  validates_attachment_size :photo, less_than: 500.kilobytes
+  validates_attachment_content_type :photo, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 end
