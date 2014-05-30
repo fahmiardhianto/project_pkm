@@ -11,7 +11,9 @@
 
 <div class="col-md-10">
   <h1> UKM</h1>
+  
   <% @businesses.each do |business| %>
+  <div class="kotakan-ukm">
     <div class="item-business">
       <div class="img-thumbnail"><%= image_tag(business.image_url) %></div>
       <p><h2><%= link_to business.name, business %></h2><div class="hr-divider"></div></p>
@@ -35,5 +37,7 @@
         <p><h5>Hari Tersisa</h5></p>
       </div>
     </div>
+    </div>
   <% end %>
+
 </div>

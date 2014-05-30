@@ -2,21 +2,74 @@
   <%= image_tag @business.image_url %>
 </div>
 
-<div class="profil-title">
-  <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
+<div class="menu-ukm">
+  <div class="tab-menu"><a href="#item1">Deskripsi</a></div>
+  <div class="tab-menu"><a href="#item2">Profil Pemilik</a></div>
+  <div class="tab-menu"><a href="#item3">Investor</a></div>
+  <div class="tab-menu"><a href="#default">Komentar</a></div>
+  <div class="red-header"></div>
+ </div>
+
+<div class="items">
+  <p id="item1">
+  <p id="item2">
+  <p id="item3">
+  <p id="default">
 </div>
 
-<div class="profil-desc">
-  <p><%= @business.description %></p>
-  <p>Ukm dibuat oleh <%= link_to @business.user.name, @business.user %>, pada tanggal <%= @business.established %></p>
-</div>
+<div class="content-ukm">
 
-<div class="profil-contact">
-  <p>Lokasi usaha : <%= @business.location %></p>
-  <p>Nomor telp/HP : <%= @business.phone %></p>
-  <p>Email : <%= @business.email %></p>
-</div>
+	<div class="ukm-desc">
+		<div class="profil-title">
+		  <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
+		</div>
 
-<% if @business.user == current_user %>
-  <%= link_to 'Edit', edit_business_path(@business) %>
-<% end %>
+		<div class="profil-desc">
+		  <p><%= @business.description %></p>
+		  <p>Ukm dibuat oleh <%= link_to @business.user.name, @business.user %>, pada tanggal <%= @business.established %></p>
+		</div>
+
+		<div class="profil-contact">
+		  <p>Lokasi usaha : <%= @business.location %></p>
+		  <p>Nomor telp/HP : <%= @business.phone %></p>
+		  <p>Email : <%= @business.email %></p>
+		</div>
+
+		<% if @business.user == current_user %>
+		<%= link_to 'Edit', edit_business_path(@business) %>
+		<% end %>
+	</div>
+
+	<div class="ukm-stats">
+		<div class="styled">
+			<progress value="50" max="100"></progress>
+		</div>
+		
+      <div class="persen">
+        <p><strong>10%</p>
+        <p><h5>Progress</h5></p>
+      </div>  <div class="vr-divider"></div>
+      <div class="terkumpul">
+        <p><strong>10 juta</strong></p>
+        <p><h5>Terkumpul</h5></p>
+      </div>
+      <div class="vr-divider2"></div>
+      <div class="hari">
+        <p><strong>20</strong></p>
+        <p><h5>Hari Tersisa</h5></p>
+      </div>
+	</div>
+
+	<div class="ukm-profit">
+		<h3>Keuntungan UKM</h3>
+		<p>1 juta / tahun</p>
+	</div>
+
+	<div class="ukm-reward">
+		<h3>Reward</h3>
+		<h4>Bronze</h4>
+		<h4>Gold</h4>
+		<h4>Rhodium</h4>
+	</div>
+
+</div>
