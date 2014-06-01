@@ -5,50 +5,57 @@
 <div class="content-ukm">
 
 	<ul class="nav nav-tabs" id="myTab">
-  <li class="active"><a href="#deskripsi" data-toggle="tab">Deskripsi</a></li>
-  <li><a href="#profil-owner" data-toggle="tab">Profil Owner</a></li>
-  <li><a href="#investor" data-toggle="tab">Investor</a></li>
-  <li><a href="#komentar" data-toggle="tab">Komentar</a></li>
-</ul>
+    <li class="active"><a href="#deskripsi" data-toggle="tab">Deskripsi</a></li>
+    <li><a href="#profil-owner" data-toggle="tab">Profil Owner</a></li>
+    <li><a href="#investor" data-toggle="tab">Investor</a></li>
+    <li><a href="#komentar" data-toggle="tab">Komentar</a></li>
+  </ul>
 
-<div class="tab-content">
-  <div class="tab-pane active" id="deskripsi">
-  	<div class="ukm-desc">
-		<div class="profil-title">
-		  <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
-		</div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="deskripsi">
+    	<div class="ukm-desc">
+  		<div class="profil-title">
+  		  <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
+  		</div>
 
-		<div class="profil-desc">
-		  <p><%= @business.description %></p>
-		  <p>Ukm dibuat oleh <%= link_to @business.user.name, @business.user %>, pada tanggal <%= @business.established %></p>
-		</div>
+  		<div class="profil-desc">
+  		  <p><%= @business.description %></p>
+  		  <p>Ukm dibuat pada <%= @business.established.to_formatted_s(:long) %></p>
+  		</div>
 
-		<div class="profil-contact">
-      <h2>Kontak</h2>
-		  <p>Lokasi usaha : <%= @business.location %></p>
-		  <p>Nomor telp/HP : <%= @business.phone %></p>
-		  <p>Email : <%= @business.email %></p>
-		</div>
+  		<div class="profil-contact">
+        <h2>Kontak</h2>
+  		  <p>Lokasi usaha : <%= @business.location %></p>
+  		  <p>Nomor telp/HP : <%= @business.phone %></p>
+  		  <p>Email : <%= @business.email %></p>
+  		</div>
 
-		<% if @business.user == current_user %>
-		<%= link_to 'Edit', edit_business_path(@business) %>
-		<% end %>
-	</div></div>
-  <div class="tab-pane" id="profil-owner">
-  	<div class="content-wrapper">
-  		<h3>Profile Owner</h3></div>
-  	</div>
-  <div class="tab-pane" id="investor">
-	<div class="content-wrapper">
-  		<h3>Daftar Investor</h3></div>
+  		<% if @business.user == current_user %>
+  		<%= link_to 'Edit', edit_business_path(@business) %>
+  		<% end %>
+  	</div></div>
+    <div class="tab-pane" id="profil-owner">
+    	<div class="content-wrapper">
+        <div class="avatar-profile">
+      		<%= image_tag @business.user.avatar.url %>
+        </div>
+        <div>
+          <p><%= link_to @business.user.name, @business.user %></p>
+          <p><%= @business.user.email %></p>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="investor">
+    	<div class="content-wrapper">
+      		<h3>Daftar Investor</h3>
+      </div>
+    </div>
+    <div class="tab-pane" id="komentar">
+    	<div class="content-wrapper">
+      		<h3>Komentar</h3>
+      </div>
+    </div>
   </div>
-  <div class="tab-pane" id="komentar">
-	<div class="content-wrapper">
-  		<h3>Komentar</h3></div>
-  </div>
-</div>
-
-
 
 	<div class="ukm-stats">
 		<div class="styled">
