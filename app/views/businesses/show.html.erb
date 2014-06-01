@@ -2,24 +2,20 @@
   <%= image_tag @business.photo.url %>
 </div>
 
-<div class="menu-ukm">
-  <div class="tab-menu"><a href="#item1">Deskripsi</a></div>
-  <div class="tab-menu"><a href="#item2">Profil Pemilik</a></div>
-  <div class="tab-menu"><a href="#item3">Investor</a></div>
-  <div class="tab-menu"><a href="#default">Komentar</a></div>
-  <div class="red-header"></div>
- </div>
 
-<div class="items">
-  <p id="item1">
-  <p id="item2">
-  <p id="item3">
-  <p id="default">
-</div>
 
 <div class="content-ukm">
 
-	<div class="ukm-desc">
+	<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#deskripsi" data-toggle="tab">Deskripsi</a></li>
+  <li><a href="#profil-owner" data-toggle="tab">Profil Owner</a></li>
+  <li><a href="#investor" data-toggle="tab">Investor</a></li>
+  <li><a href="#komentar" data-toggle="tab">Komentar</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="deskripsi">
+  	<div class="ukm-desc">
 		<div class="profil-title">
 		  <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
 		</div>
@@ -38,7 +34,22 @@
 		<% if @business.user == current_user %>
 		<%= link_to 'Edit', edit_business_path(@business) %>
 		<% end %>
-	</div>
+	</div></div>
+  <div class="tab-pane" id="profil-owner">
+  	<div class="content-wrapper">
+  		<h3>Profile Owner</h3></div>
+  	</div>
+  <div class="tab-pane" id="investor">
+	<div class="content-wrapper">
+  		<h3>Daftar Investor</h3></div>
+  </div>
+  <div class="tab-pane" id="komentar">
+	<div class="content-wrapper">
+  		<h3>Komentar</h3></div>
+  </div>
+</div>
+
+
 
 	<div class="ukm-stats">
 		<div class="styled">
@@ -58,9 +69,8 @@
         <p><strong>20</strong></p>
         <p><h5>Hari Tersisa</h5></p>
       </div>
-	</div>
 
-	<div class="ukm-profit">
+    <div class="ukm-profit">
 		<h3>Keuntungan UKM</h3>
 		<p>1 juta / tahun</p>
 	</div>
@@ -71,5 +81,15 @@
 		<h4>Gold</h4>
 		<h4>Rhodium</h4>
 	</div>
+
+	</div>
+
+	
+
+	<script>
+  $(function () {
+    $('#myTab a:first').tab('show')
+  })
+</script>
 
 </div>

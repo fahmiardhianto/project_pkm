@@ -1,30 +1,35 @@
 
-<%= image_tag @user.avatar.url %>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <div class="avatar-profile">
+  <%= image_tag @user.avatar.url %>
+  </div>
+  <div class="profil-pengguna">
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @user.birthday %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
 
-  <p>Usaha <%= @user.name %></p>
-  <% @businesses.each do |business| %>
+  <p>
+    <strong>Birthday:</strong>
+    <%= @user.birthday %>
+  </p>
+
+    <p>Usaha <%= @user.name %></p>
+    <% @businesses.each do |business| %>
+      <p>
+        <%= link_to business.name, business %>
+      </p>
+    <% end %>
+
+    <br><br>
+  <% if logged_in? %>
     <p>
-      <%= link_to business.name, business %>
+      <%= link_to 'Buat usaha', new_business_path %>
     </p>
   <% end %>
-
-  <br><br>
-<% if logged_in? %>
-  <p>
-    <%= link_to 'Buat usaha', new_business_path %>
-  </p>
-<% end %>
+</div>
