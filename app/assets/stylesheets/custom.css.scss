@@ -2,6 +2,7 @@
 
 html,
 body {
+  overflow-x: hidden;
   height: 100%;
   background-color: #F5F5F5;
   font-family: 'Lato', sans-serif;
@@ -129,9 +130,9 @@ footer {
 	a:hover {
     zoom:110%;
 		}
-	}
+  }
 
-.col-md-2 {
+#category-list {
   padding:0px;
   margin-top:20px;
   background-color:#EDEDEE;
@@ -150,7 +151,7 @@ footer {
   >ul{
   padding-left:25px;
   }
-  }
+}
 
 .col-md-10 {
   >h1{
@@ -407,7 +408,6 @@ div.items p:target {display: block}
 .menu-ukm{
   width: 800px;
   height:40px;
-
 }
 
 //tab menu
@@ -449,25 +449,9 @@ ul#myTab.nav.nav-tabs{
   }
 }
 
-.kotakan-form{
-  padding-top: 10px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #E3E3E3;
-}
-
-button.btn.btn-default.btn-primary, button.btn.btn-lg.btn-primary{
-  background-color: #B23437;
-  color: #FFF;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #E3E3E3;
-}
-
 .span6 > p{
   margin-left: 50px;
 }
-
 
 //profil pengguna
 
@@ -490,4 +474,9 @@ button.btn.btn-default.btn-primary, button.btn.btn-lg.btn-primary{
   border-width: 1px;
   border-color: #E3E3E3;
   background-color: #FFF;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
 }

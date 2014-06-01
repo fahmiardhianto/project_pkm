@@ -2,8 +2,6 @@
   <%= image_tag @business.photo.url %>
 </div>
 
-
-
 <div class="content-ukm">
 
 	<ul class="nav nav-tabs" id="myTab">
@@ -26,6 +24,7 @@
 		</div>
 
 		<div class="profil-contact">
+      <h2>Kontak</h2>
 		  <p>Lokasi usaha : <%= @business.location %></p>
 		  <p>Nomor telp/HP : <%= @business.phone %></p>
 		  <p>Email : <%= @business.email %></p>
@@ -53,15 +52,16 @@
 
 	<div class="ukm-stats">
 		<div class="styled">
-			<progress value="50" max="100"></progress>
+			<progress value="<%= @business.received %>" max="<%= @business.target %>"></progress>
 		</div>
-		
+
       <div class="persen">
-        <p><strong>10%</p>
+        <p><strong><%= @business.received/@business.target*100 %>%</strong></p>
         <p><h5>Progress</h5></p>
-      </div>  <div class="vr-divider"></div>
+      </div>
+      <div class="vr-divider2"></div>
       <div class="terkumpul">
-        <p><strong>10 juta</strong></p>
+        <p><strong><%= @business.received %> juta</strong></p>
         <p><h5>Terkumpul</h5></p>
       </div>
       <div class="vr-divider2"></div>
@@ -84,7 +84,7 @@
 
 	</div>
 
-	
+
 
 	<script>
   $(function () {
