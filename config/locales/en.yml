@@ -25,3 +25,9 @@ en:
       create: "Buat"
       update: "Perbarui"
       save: "Masuk"
+  number:
+    currency:
+      format:
+        unit: "Rp."
+        delimiter: "."
+        separator: ","
