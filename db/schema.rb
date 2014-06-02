@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528075319) do
+ActiveRecord::Schema.define(version: 20140602052529) do
 
   create_table "businesses", force: true do |t|
     t.integer  "category_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140528075319) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.datetime "days_left"
   end
 
   add_index "businesses", ["category_id"], name: "index_businesses_on_category_id"

@@ -54,6 +54,12 @@
     </div>
   </div>
   <div class="form-group">
+    <%= f.label 'Batas pengumpulan modal', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.date_select :days_left, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
     <%= f.label 'Jumlah dana yang sudah dikumpulkan', class: 'col-sm-2 control-label' %>
     <div class="col-sm-4">
       <%= f.text_field :received, class: 'form-control' %>
