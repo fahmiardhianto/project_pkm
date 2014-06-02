@@ -15,7 +15,7 @@
       <div class="item-ukm">
         <div class="img-thumbnail"><%= image_tag(business.photo.url) %></div>
         <p><h2><%= link_to business.name, business %></h2><div class="hr-divider"></div></p>
-        <p><%= truncate(business.description, length: 500, separator: ' ') { link_to ' baca selengkapnya', business} %></p>
+        <p style="text-align: justify; padding-right: 50px;"><%= truncate(business.description, length: 500, separator: ' ') { link_to ' baca selengkapnya', business} %></p>
       </div>
       <div class="styled">
         <progress value="<%= business.received %>" max="<%= business.target %>"></progress>

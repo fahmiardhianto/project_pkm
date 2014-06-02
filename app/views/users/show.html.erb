@@ -17,7 +17,7 @@
 
     <p>
       <strong>Tanggal lahir:</strong>
-      <%= @user.birthday %>
+      <%= @user.birthday.to_formatted_s(:long) %>
     </p>
     <% if logged_in? && current_user == @user %>
       <p>
