@@ -6,13 +6,13 @@
 
 	<ul class="nav nav-tabs" id="myTab">
     <li class="active"><a href="#deskripsi" data-toggle="tab">Deskripsi</a></li>
-    <li><a href="#profil-owner" data-toggle="tab">Profil Owner</a></li>
+    <li><a href="#profil-owner" data-toggle="tab">Owner</a></li>
     <li><a href="#investor" data-toggle="tab">Investor</a></li>
     <li><a href="#komentar" data-toggle="tab">Komentar</a></li>
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane active" id="deskripsi">
+    <div class="tab-pane fade in active" id="deskripsi">
     	<div class="ukm-desc">
   		<div class="profil-title">
   		  <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
@@ -20,7 +20,7 @@
 
   		<div class="profil-desc">
   		  <p><%= @business.description %></p>
-  		  <p>Ukm dibuat pada <%= @business.established.to_formatted_s(:long) %></p>
+  		  <p style="font-style: italic; float: right;">Ukm dibuat pada <%= @business.established.to_formatted_s(:long) %></p>
   		</div>
 
   		<div class="profil-contact">
@@ -34,7 +34,7 @@
   		<%= link_to 'Edit', edit_business_path(@business) %>
   		<% end %>
   	</div></div>
-    <div class="tab-pane" id="profil-owner">
+    <div class="tab-pane fade" id="profil-owner">
     	<div class="content-wrapper">
         <div class="avatar-profile">
       		<%= image_tag @business.user.avatar.url %>
@@ -45,14 +45,16 @@
         </div>
       </div>
     </div>
-    <div class="tab-pane" id="investor">
+    <div class="tab-pane fade" id="investor">
     	<div class="content-wrapper">
       		<h3>Daftar Investor</h3>
+          <p>Belum ada investor</p>
       </div>
     </div>
-    <div class="tab-pane" id="komentar">
+    <div class="tab-pane fade" id="komentar">
     	<div class="content-wrapper">
       		<h3>Komentar</h3>
+          <p>Komentar ditutup</p>
       </div>
     </div>
   </div>
