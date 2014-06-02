@@ -13,7 +13,7 @@
 
     <div class="collapse navbar-collapse" id="navbar-collapse-menu">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Beranda', root_path %></li>
+        <li><%= link_to 'Beranda', businesses_path %></li>
       <% if logged_in? %>
         <li class="dropdown">
           <a href="<%= user_path(current_user) %>" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %><span class="caret"></span></a>

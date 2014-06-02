@@ -8,41 +8,39 @@
   </ul>
 </div>
 
-
 <div id="ukm-list" class="col-md-10">
   <h1> UKM</h1>
-
   <% @businesses.each do |business| %>
-  <div class="kotakan-ukm">
-    <div class="item-business">
-      <div class="img-thumbnail"><%= image_tag(business.photo.url) %></div>
-      <p><h2><%= link_to business.name, business %></h2><div class="hr-divider"></div></p>
-      <p><%= truncate(business.description, length: 500, separator: ' ') { link_to ' baca selengkapnya', business} %></p>
-    </div>
-    <div class="styled">
-      <progress value="<%= business.received %>" max="<%= business.target %>"></progress>
-    </div>
-    <div class="kotakan">
-      <div class="persen">
-        <p><strong><%= business.received/business.target*100 %>%</strong></p>
-        <p><h5>Progress</h5></p>
-      </div>  <div class="vr-divider"></div>
-      <div class="terkumpul">
-        <p><strong><%= business.received %></strong></p>
-        <p><h5>Terkumpul</h5></p>
+    <div class="kotakan-ukm">
+      <div class="item-ukm">
+        <div class="img-thumbnail"><%= image_tag(business.photo.url) %></div>
+        <p><h2><%= link_to business.name, business %></h2><div class="hr-divider"></div></p>
+        <p><%= truncate(business.description, length: 500, separator: ' ') { link_to ' baca selengkapnya', business} %></p>
       </div>
-      <div class="vr-divider2"></div>
-      <div class="hari">
-        <p><strong>
-          <% if business.days_left %>
-          <%= ((business.days_left - Time.now)/3600/24).round(0) %>
-          <% else %>
-          <%= 0 %>
-          <% end %>
-          </strong></p>
-        <p><h5>Hari Tersisa</h5></p>
+      <div class="styled">
+        <progress value="<%= business.received %>" max="<%= business.target %>"></progress>
       </div>
-    </div>
+      <div class="kotakan">
+        <div class="persen">
+          <p><strong><%= business.received/business.target*100 %>%</strong></p>
+          <p><h5>Progress</h5></p>
+        </div>  <div class="vr-divider"></div>
+        <div class="terkumpul">
+          <p><strong><%= business.received %></strong></p>
+          <p><h5>Terkumpul</h5></p>
+        </div>
+        <div class="vr-divider2"></div>
+        <div class="hari">
+          <p><strong>
+            <% if business.days_left %>
+            <%= ((business.days_left - Time.now)/3600/24).round(0) %>
+            <% else %>
+            <%= 0 %>
+            <% end %>
+            </strong></p>
+          <p><h5>Hari Tersisa</h5></p>
+        </div>
+      </div>
     </div>
   <% end %>
 

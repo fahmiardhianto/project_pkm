@@ -1,19 +1,7 @@
 ProjectPkm::Application.routes.draw do
-  get 'categories/index'
-
-  get 'categories/new'
-
-  get 'categories/create'
-
-  get 'categories/edit'
-
-  get 'categories/update'
-
-  get 'categories/destroy'
-
   get 'static_pages/about', path: 'tentang-kami', as: 'about'
-
   get 'static_pages/contact', path: 'kontak', as: 'contact'
+  # root 'static_pages#landing'
 
   resources :sessions, only: [:new, :create, :destroy]
   get 'users/new', path: 'daftar', as: 'signup'

@@ -1,37 +1,41 @@
-  <div class="avatar-profile">
+<div class="profil">
+  <div class="avatar-profil">
     <%= image_tag @user.avatar.url %>
   </div>
 
-<div class="profil-pengguna">
-  <p>
-    <strong>Nama:</strong>
-    <%= @user.name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </p>
-
-  <p>
-    <strong>Tanggal lahir:</strong>
-    <%= @user.birthday %>
-  </p>
-
-    <p>Usaha <%= @user.name %></p>
-    <% @businesses.each do |business| %>
-      <div class="ukm-photo-thumbnail">
-        <%= image_tag business.photo.url %>
-        <p>
-          <%= link_to business.name, business %>
-        </p>
-      </div>
-    <% end %>
-
-    <br><br>
-  <% if logged_in? && current_user == @user %>
+  <div class="profil-pengguna">
+    <h3>Profil</h3>
     <p>
-      <%= link_to 'Buat usaha', new_business_path %>
+      <strong>Nama:</strong>
+      <%= @user.name %>
     </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+
+    <p>
+      <strong>Tanggal lahir:</strong>
+      <%= @user.birthday %>
+    </p>
+    <% if logged_in? && current_user == @user %>
+      <p>
+        <%= link_to 'Buat usaha', new_business_path %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+<div class="usaha-lain">
+  <h3>Usaha milik <%= @user.name %></h3>
+  <% @businesses.each do |business| %>
+      <div class="usaha-thumbnail">
+        <%= image_tag business.photo.url %>
+        <%= link_to business.name, business %>
+      </div>
+      <p>
+      </p>
   <% end %>
 </div>
+
