@@ -10,8 +10,9 @@ gem 'faker'
 
 group :development do
   gem 'sqlite3'
-  gem 'capistrano'
-  gem 'rvm-capistrano'
+  # gem 'capistrano'
+  # gem 'rvm-capistrano'
+  # gem 'capistrano-rails'
 end
 
 group :production do
