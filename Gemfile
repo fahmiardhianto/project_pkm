@@ -10,12 +10,14 @@ gem 'faker'
 
 group :development do
   gem 'sqlite3'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 end
 
 group :production do
 # Use postgresql as the database for Active Record
   gem 'pg'
-  gem 'rails_12factor'
+#  gem 'rails_12factor'
   gem 'unicorn'
 end
 

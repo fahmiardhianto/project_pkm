@@ -1,26 +1,15 @@
-worker_processes 4
+root = "/home/fahmi/project_pkm/current"
+working_directory root
+pid "#{root}/tmp/pids/unicorn.pid"
+stderr_path "#{root}/log/unicorn.log"
+stdout_path "#{root}/log/unicorn.log"
 
-################################################################################
-# Adjust your APP_PATH here!!!
-################################################################################
-APP_PATH = "/home/fahmi" # NO trailing slash
-
-working_directory APP_PATH
-listen "/tmp/.sock", :backlog => 64
-listen 8080, :tcp_nopush => true
+listen "/tmp/unicorn.project_pkm.sock"
+worker_processes 2
 timeout 30
-pid APP_PATH + "/tmp/pids/unicorn.pid"
-stderr_path APP_PATH + "/log/unicorn.stderr.log"
-stdout_path APP_PATH + "/log/unicorn.stdout.log"
-preload_app true
-GC.respond_to?(:copy_on_write_friendly=) and
-  GC.copy_on_write_friendly = true
-before_fork do |server, worker|
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.connection.disconnect!
-end
 
-after_fork do |server, worker|
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.establish_connection
+# Force the bundler gemfile environment variable to
+# reference the capistrano "current" symlink
+before_exec do |_|
+  ENV["BUNDLE_GEMFILE"] = File.join(root, 'Gemfile')
 end
