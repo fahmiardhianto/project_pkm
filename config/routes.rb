@@ -1,6 +1,7 @@
 ProjectPkm::Application.routes.draw do
   get 'static_pages/about', path: 'tentang-kami', as: 'about'
   get 'static_pages/contact', path: 'kontak', as: 'contact'
+  get 'businesses/invest'
   # root 'static_pages#landing'
 
   resources :sessions, only: [:new, :create, :destroy]

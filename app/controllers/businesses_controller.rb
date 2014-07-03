@@ -69,6 +69,11 @@ class BusinessesController < ApplicationController
     end
   end
 
+  def invest
+    @server_key = 'c9eccfe1-8e7c-4773-aa1e-59da641bd6e2'
+    @endpoint = 'https://api.sandbox.veritrans.co.id/v2/charge'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_business
