@@ -6,9 +6,9 @@ gem 'tzinfo-data'
 # gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'bcrypt'
 gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'faker'
 
 group :development do
+	gem 'faker'
   gem 'sqlite3'
   # gem 'capistrano'
   # gem 'rvm-capistrano'
