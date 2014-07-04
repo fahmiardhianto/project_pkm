@@ -5,8 +5,8 @@ class BusinessesController < ApplicationController
   # GET /businesses
   # GET /businesses.json
   def index
-    if params[:category]
-      @businesses = Business.all.order(updated_at: :desc).where(category_id: params[:category])
+    if params[:kategori]
+      @businesses = Business.category_name(params[:kategori])
     else
       @businesses = Business.all.order(updated_at: :desc)
     end
@@ -82,6 +82,6 @@ class BusinessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
-      params.require(:business).permit(:name, :description, :established, :location, :category_id, :user_id, :photo, :days_left, :phone, :target, :received)
+      params.require(:business).permit(:name, :description, :established, :email, :location, :category_id, :user_id, :photo, :days_left, :phone, :target, :received)
     end
 end

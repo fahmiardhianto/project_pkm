@@ -1,20 +1,20 @@
-<div id="category-list" class="col-md-2">
+<div id="category-list" class="col-md-2 col-xs-6">
   <h2>Kategori</h2>
   <ul>
     <% @categories.each do |cat| %>
-    <li><a href="/ukm?category=<%= cat.id %>" data-id='<%= cat.id %>'><%= cat.name %></a></li>
+    <li><a href="/ukm?kategori=<%= cat.name %>"><%= cat.name %></a></li>
     <% end %>
     <li><a href="/">Semua</a></li>
   </ul>
 </div>
 
-<div id="ukm-list" class="col-md-10">
+<div id="ukm-list" class="col-md-10 col-xs-12">
   <h1> UKM</h1>
   <% @businesses.each do |business| %>
     <div class="kotakan-ukm">
       <div class="item-ukm">
         <div class="img-thumbnail"><%= image_tag(business.photo.url) %></div>
-        <p><h2><%= link_to business.name, business %></h2><div class="hr-divider"></div></p>
+        <p><h2><%= link_to business.name, business %></h2><!-- <div class="hr-divider"></div> --></p>
         <p style="text-align: justify; padding-right: 50px;"><%= truncate(business.description, length: 500, separator: ' ') { link_to ' baca selengkapnya', business} %></p>
       </div>
       <div class="styled">
