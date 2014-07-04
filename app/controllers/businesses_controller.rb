@@ -70,8 +70,8 @@ class BusinessesController < ApplicationController
   end
 
   def invest
-    @server_key = 'c9eccfe1-8e7c-4773-aa1e-59da641bd6e2'
-    @endpoint = 'https://api.sandbox.veritrans.co.id/v2/charge'
+    c = Curl::Easy.http_post("https://api.sandbox.veritrans.co.id/v2/charge")
+    render json: c.body_str
   end
 
   private
