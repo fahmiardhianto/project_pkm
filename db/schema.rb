@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602145425) do
+ActiveRecord::Schema.define(version: 20140706060736) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "business_images", force: true do |t|
+    t.integer  "business_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "businesses", force: true do |t|
     t.integer  "category_id"
@@ -33,8 +43,8 @@ ActiveRecord::Schema.define(version: 20140602145425) do
     t.datetime "days_left"
   end
 
-  add_index "businesses", ["category_id"], name: "index_businesses_on_category_id"
-  add_index "businesses", ["user_id"], name: "index_businesses_on_user_id"
+  add_index "businesses", ["category_id"], name: "index_businesses_on_category_id", using: :btree
+  add_index "businesses", ["user_id"], name: "index_businesses_on_user_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -56,7 +66,7 @@ ActiveRecord::Schema.define(version: 20140602145425) do
     t.datetime "avatar_updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

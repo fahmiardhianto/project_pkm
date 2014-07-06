@@ -1,6 +1,9 @@
 class Business < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
+  has_many :business_images
+  accepts_nested_attributes_for :business_images
+
   scope :category_name, ->(cat_name) { joins(:category).where('categories.name = ?', cat_name) }
 
   validates :name, :category_id, :user_id, :established, :phone, :location, :description, presence: true

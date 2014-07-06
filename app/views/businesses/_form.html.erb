@@ -72,10 +72,16 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label 'Foto', class: "col-sm-2 control-label" %>
+    <%= f.label 'Logo', class: "col-sm-2 control-label" %>
     <div class="col-sm-4">
       <%= f.file_field :photo %>
     </div>
+  </div>
+  <div class="form-group">
+    <%= f.fields_for :business_images do |img| %>
+      <%= img.label :image, class: "col-sm-2 control-label" %>
+      <%= img.file_field :image, multiple: true, name: "business_images[image][]", class: "col-sm-4" %>
+    <% end %>
   </div>
   <%= f.hidden_field(:user_id, value: current_user.id) %>
   <div class="actions form-group">
