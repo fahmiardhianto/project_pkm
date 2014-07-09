@@ -27,6 +27,7 @@ class BusinessesController < ApplicationController
 
   # GET /businesses/1/edit
   def edit
+    @business_images = @business.business_images.build
   end
 
   # POST /businesses
@@ -36,8 +37,8 @@ class BusinessesController < ApplicationController
 
     respond_to do |format|
       if @business.save
-        params[:business_image]['image'].each do |img|
-          @business_image = @business.business_image.create!(image: img, business_id: @business.id)
+        params[:business_images]['image'].each do |img|
+          @business_image = @business.business_images.create!(image: img, business_id: @business.id)
         end
         flash[:success] = 'Profil UKM berhasil dibuat.'
         format.html { redirect_to @business }
@@ -87,6 +88,6 @@ class BusinessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
-      params.require(:business).permit(:name, :description, :established, :email, :location, :category_id, :user_id, :photo, :days_left, :phone, :target, :received, business_image_attributes: [:id, :business_id, :image])
+      params.require(:business).permit(:name, :description, :established, :email, :location, :category_id, :user_id, :photo, :days_left, :phone, :target, :received, business_images_attributes: [:id, :business_id, :image])
     end
 end

@@ -1,5 +1,34 @@
-<div class="img-profil">
-  <%= image_tag @business.photo.url %>
+<div id="ukm-images-carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% for i in 0..@business_images.count-1 %>
+      <% if i == 0 %>
+        <li data-target="#ukm-images-carousel" data-slide-to="<%= i %>" class="active"></li>
+      <% else %>
+        <li data-target="#ukm-images-carousel" data-slide-to="<%= i %>"></li>
+      <% end %>
+    <% end %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% @business_images.each do |img| %>
+      <div class="item<%= ' active' if @business_images.first == img %>">
+        <img src="<%= img.image.url(:thumb) %>" alt="<%= img.image.filename %>">
+        <div class="carousel-caption">
+          ...
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#ukm-images-carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#ukm-images-carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
 
 <div class="content-ukm">
@@ -14,26 +43,33 @@
   <div class="tab-content">
     <div class="tab-pane fade in active" id="deskripsi">
     	<div class="ukm-desc">
-  		<div class="profil-title">
-  		  <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
-  		</div>
+        <div class="img-profil">
+          <%= image_tag @business.photo.url %>
+        </div>
 
-  		<div class="profil-desc">
-  		  <p><%= @business.description %></p>
-  		  <p style="font-style: italic; float: right;">Ukm dibuat pada <%= @business.established.to_formatted_s(:long) %></p>
-  		</div>
+    		<div class="profil-title">
+    		  <h1><%= @business.name %><br><small><%= @business.category.name %></small></h1>
+    		</div>
 
-  		<div class="profil-contact">
-        <h2>Kontak</h2>
-  		  <p>Lokasi usaha : <%= @business.location %></p>
-  		  <p>Nomor telp/HP : <%= @business.phone %></p>
-  		  <p>Email : <%= @business.email %></p>
-  		</div>
+    		<div class="profil-desc">
+    		  <p><%= @business.description %></p>
+    		  <p style="font-style: italic; float: right;">Ukm dibuat pada <%= @business.established.to_formatted_s(:long) %></p>
+    		</div>
 
-  		<% if @business.user == current_user %>
-  		<%= link_to 'Edit', edit_business_path(@business) %>
-  		<% end %>
-  	</div></div>
+    		<div class="profil-contact">
+          <h2>Kontak</h2>
+    		  <p>Lokasi usaha : <%= @business.location %></p>
+    		  <p>Nomor telp/HP : <%= @business.phone %></p>
+    		  <p>Email : <%= @business.email %></p>
+    		</div>
+
+    		<% if @business.user == current_user %>
+      		<%= link_to 'Edit', edit_business_path(@business) %>
+          <%= link_to 'Hapus', business_path, method: :delete, data: { confirm: 'Anda yakin ingin menghapus usaha anda?' } %>
+    		<% end %>
+  	  </div>
+    </div>
+
     <div class="tab-pane fade" id="profil-owner">
     	<div class="content-wrapper">
         <div class="avatar-profile">

@@ -7,10 +7,13 @@ gem 'tzinfo-data'
 gem 'bcrypt'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'carrierwave'
+gem 'rmagick'
+
+# gem 'jquery-fileupload-rails'
 
 group :development do
-	gem 'faker'
-  gem 'sqlite3'
+	# gem 'faker'
+  # gem 'sqlite3'
   # gem 'capistrano'
   # gem 'rvm-capistrano'
   # gem 'capistrano-rails'
