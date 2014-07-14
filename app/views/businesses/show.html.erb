@@ -126,7 +126,7 @@
       <div class="vr-divider2"></div>
       <div class="hari">
         <p><strong>
-          <% if @business.days_left %>
+          <% if @business.days_left > Time.now %>
             <%= ((@business.days_left - Time.now)/3600/24).round(0) %>
           <% else %>
             <%= 0 %>
@@ -135,10 +135,10 @@
         <p><h5>Hari Tersisa</h5></p>
       </div>
 
-    <div class="ukm-profit">
+    <!-- <div class="ukm-profit">
   		<h3>Keuntungan UKM</h3>
   		<p>1 juta / tahun</p>
-	</div>
+	</div> -->
 
 	<div class="ukm-reward">
 		<h3>Reward</h3>

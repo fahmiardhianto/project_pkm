@@ -37,8 +37,10 @@ class BusinessesController < ApplicationController
 
     respond_to do |format|
       if @business.save
-        params[:business_images]['image'].each do |img|
-          @business_image = @business.business_images.create!(image: img, business_id: @business.id)
+        if params[:business_images]
+          params[:business_images]['image'].each do |img|
+            @business_image = @business.business_images.create!(image: img, business_id: @business.id)
+          end
         end
         flash[:success] = 'Profil UKM berhasil dibuat.'
         format.html { redirect_to @business }

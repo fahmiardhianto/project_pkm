@@ -32,10 +32,10 @@
         <div class="vr-divider2"></div>
         <div class="hari">
           <p><strong>
-            <% if business.days_left %>
-            <%= ((business.days_left - Time.now)/3600/24).round(0) %>
+            <% if business.days_left > Time.now %>
+              <%= ((business.days_left - Time.now)/3600/24).round(0) %>
             <% else %>
-            <%= 0 %>
+              <%= 0 %>
             <% end %>
             </strong></p>
           <p><h5>Hari Tersisa</h5></p>
